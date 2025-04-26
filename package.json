@@ -2,7 +2,7 @@
   "name": "zoeynchichi.github.io",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://zoeynchichi.github.io/",
+  "homepage": "https://zoeynchichi.github.io",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
