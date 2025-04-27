@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import reactLogo from './assets/react.svg';
+import DefaultButton from './components/buttons';
 import viteLogo from '/vite.svg';
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
       <p className="read-the-docs">
         {count > 3 ? 'orange' : 'green'}
         Click on the Vite and React logos to learn more
+        <DefaultButton btnText={'am i here'} />
+        <DefaultButton btnText={'am i here'} />
       </p>
     </>
   );
