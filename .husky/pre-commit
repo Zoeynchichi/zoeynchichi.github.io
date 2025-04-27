@@ -1,0 +1,2 @@
+echo "Hello, husky is running!"
+npx lint-staged
