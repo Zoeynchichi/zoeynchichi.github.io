@@ -1,37 +1,26 @@
-import { useState } from 'react';
-import './App.css';
-import reactLogo from './assets/react.svg';
-import DefaultButton from './components/buttons';
-import viteLogo from '/vite.svg';
+import Home from '@pages/home';
+import NotFoundPage from '@pages/not-found';
+import Projects from '@pages/projects';
+import '@src/App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
+
+const GlobalStyle = createGlobalStyle`
+  ${reset}
+`;
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite11 + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edits <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        {count > 3 ? 'orange' : 'green'}
-        Click on the Vite and React logos to learn more
-        <DefaultButton btnText={'am i here'} />
-        <DefaultButton btnText={'am i here'} />
-      </p>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/projects" element={<Projects />}></Route>
+          <Route path="*" element={<NotFoundPage />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
